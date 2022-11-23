@@ -1,0 +1,29 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Participants</h1>
+
+<table class="table table-dark table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+    <th scope="col">Gender</th>
+    <th scope="col">Birthday</th>
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @participants.each do |participant| %>
+    <tr>
+      <th scope="row"><%= participant.id %></th>
+      <td><%= participant.name %></td>
+      <td><%= participant.gender %></td>
+      <td><%= participant.birthday %></td>
+      <td><%= link_to "Show more info", participant_path(participant.id), class: "btn btn-outline-primary"  %></td>
+    </tr>
+    <tr>
+  <%end%>
+  </tbody>
+</table>
+
+<%= link_to "New participant", new_participant_path, class: "btn btn-primary justify-content-center"%>

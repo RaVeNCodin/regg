@@ -1,0 +1,34 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Coordinators</h1>
+
+<p style="color: green"><%= notice %></p>
+
+
+  <table class="table table-dark table-hover">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Email</th>
+      <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @coordinators.each do |coordinator| %>
+      <tr>
+        <th scope="row"><%= coordinator.id%></th>
+        <td><%= coordinator.name %></td>
+        <td><%= coordinator.phone_number%></td>
+        <td><%= coordinator.email%></td>
+        <td><%= link_to 'show more info', coordinator_path(coordinator.id), class: "btn btn-outline-primary"%></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+
+
+<%= link_to "New coordinator", new_coordinator_path, class: "btn btn-primary justify-content-center" %>
+
